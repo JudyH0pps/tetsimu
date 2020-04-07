@@ -24,51 +24,51 @@ var ConfigPanel = React.createClass({
 
   render: function() {
     var simuKeyConfigItems = this._makeKeyConfigItems([
-      { actionName: 'ハードドロップ', action: 'hardDrop'},
-      { actionName: 'ソフトロップ', action: 'softDrop'},
-      { actionName: '左移動', action: 'leftMove'},
-      { actionName: '右移動', action: 'rightMove'},
-      { actionName: '左回転', action: 'turnLeft'},
-      { actionName: '右回転', action: 'turnRight'},
-      { actionName: 'ホールド', action: 'hold'},
-      { actionName: '１手進む', action: 'forward'},
-      { actionName: '１手戻る', action: 'back'},
-      { actionName: 'リトライ', action: 'retry'},
-      { actionName: 'スーパーリトライ', action: 'superRetry'},
-      { actionName: 'クリア', action: 'clear'},
-      { actionName: 'モード切替(Replay)', action: 'changeModeToReplay'},
-      { actionName: 'モード切替(Edit)', action: 'changeModeToEdit'},
-      { actionName: '戻る', action: 'backToEditMode'},
-      { actionName: 'URL出力', action: 'createUrlParameters'},
-      { actionName: '設定', action: 'configure'}
+      { actionName: '하드드롭', action: 'hardDrop'},
+      { actionName: '소프트드롭', action: 'softDrop'},
+      { actionName: '좌 이동', action: 'leftMove'},
+      { actionName: '우 이동', action: 'rightMove'},
+      { actionName: '좌 회전', action: 'turnLeft'},
+      { actionName: '우 회전', action: 'turnRight'},
+      { actionName: '홀드', action: 'hold'},
+      { actionName: '１수 앞으로', action: 'forward'},
+      { actionName: '１수 뒤로', action: 'back'},
+      { actionName: '리트라이', action: 'retry'},
+      { actionName: '슈퍼리트라이', action: 'superRetry'},
+      { actionName: '클리어', action: 'clear'},
+      { actionName: '모드 변경(Replay)', action: 'changeModeToReplay'},
+      { actionName: '모드 변경(Edit)', action: 'changeModeToEdit'},
+      { actionName: '되돌리기', action: 'backToEditMode'},
+      { actionName: 'URL출력', action: 'createUrlParameters'},
+      { actionName: '설정', action: 'configure'}
     ], this.state.config.key.simu);
 
     var replayKeyConfigItems = this._makeKeyConfigItems([
-      { actionName: '１手進む', action: 'forward'},
-      { actionName: '１手戻る', action: 'back'},
-      { actionName: '最初に戻る', action: 'backToHead'},
-      { actionName: 'モード切替(Simu)', action: 'changeModeToSimu'},
-      { actionName: '戻る', action: 'cancel'},
-      { actionName: 'URL出力', action: 'createUrlParameters'},
-      { actionName: '設定', action: 'configure'}
+      { actionName: '１수 앞으로', action: 'forward'},
+      { actionName: '１수 앞으로', action: 'back'},
+      { actionName: '처음으로 돌아가기', action: 'backToHead'},
+      { actionName: '모드 교체(Simu)', action: 'changeModeToSimu'},
+      { actionName: '돌아가기', action: 'cancel'},
+      { actionName: 'URL출력', action: 'createUrlParameters'},
+      { actionName: '설정', action: 'configure'}
     ], this.state.config.key.replay);
 
     var editKeyConfigItems = this._makeKeyConfigItems([
-      { actionName: 'Iを選択', action: 'selectTypeI'},
-      { actionName: 'Jを選択', action: 'selectTypeJ'},
-      { actionName: 'Lを選択', action: 'selectTypeL'},
-      { actionName: 'Oを選択', action: 'selectTypeO'},
-      { actionName: 'Sを選択', action: 'selectTypeS'},
-      { actionName: 'Tを選択', action: 'selectTypeT'},
-      { actionName: 'Zを選択', action: 'selectTypeZ'},
-      { actionName: '白を選択', action: 'selectTypeOjama'},
-      { actionName: '黒を選択', action: 'selectTypeNone'},
-      { actionName: 'ホールドを設定', action: 'setHold'},
-      { actionName: 'クリア', action: 'clear'},
-      { actionName: 'モード切り替え(Simu)', action: 'changeModeToSimu'},
-      { actionName: '戻る', action: 'cancel'},
-      { actionName: 'URL出力', action: 'createUrlParameters'},
-      { actionName: '設定', action: 'configure'}
+      { actionName: 'I선택', action: 'selectTypeI'},
+      { actionName: 'J선택', action: 'selectTypeJ'},
+      { actionName: 'L선택', action: 'selectTypeL'},
+      { actionName: 'O선택', action: 'selectTypeO'},
+      { actionName: 'S선택', action: 'selectTypeS'},
+      { actionName: 'T선택', action: 'selectTypeT'},
+      { actionName: 'Z선택', action: 'selectTypeZ'},
+      { actionName: '방해블록 선택', action: 'selectTypeOjama'},
+      { actionName: '빈칸 선택', action: 'selectTypeNone'},
+      { actionName: '홀드 설정', action: 'setHold'},
+      { actionName: '클리어', action: 'clear'},
+      { actionName: '모드 변경(Simu)', action: 'changeModeToSimu'},
+      { actionName: '돌아가기', action: 'cancel'},
+      { actionName: 'URL출력', action: 'createUrlParameters'},
+      { actionName: '설정', action: 'configure'}
     ], this.state.config.key.edit);
 
     return <div className="config-panel">
@@ -83,9 +83,9 @@ var ConfigPanel = React.createClass({
           <hr style={{clear:'both'}}/>
 
           <div className="config-button-area">
-            <button onClick={this.onSave}>保存</button>
-            <button onClick={this.onCancel}>キャンセル</button>
-            <button onClick={this.onInitialize}>初期設定に戻す</button>
+            <button onClick={this.onSave}>저장</button>
+            <button onClick={this.onCancel}>취소</button>
+            <button onClick={this.onInitialize}>초기설정 되돌리기</button>
           </div>
         </div>
         <div className="config-error">{this.state.errorMessages.map(function(message) {
@@ -198,7 +198,7 @@ var ConfigPanel = React.createClass({
       key = config[p];
       if ((key !== '') && (key in appearedKey) && !(key in duplicatekeys)) {
         duplicatekeys[key] = true;
-        errorMessages.push(key + 'が重複しています。');
+        errorMessages.push(key + '가 중복입니다');
       }
 
       appearedKey[key] = true;
@@ -222,7 +222,7 @@ var ConfigPanel = React.createClass({
   },
 
   onInitialize: function() {
-    if (confirm('初期設定に戻します。よろしいですか？')) {
+    if (confirm('초기설정으로 돌아갑니다. 괜찮습니까?')) {
       this._save(C.ConfigStore.defaultConfig());
     }
   }
@@ -230,7 +230,7 @@ var ConfigPanel = React.createClass({
 
 var KeyConfigItem = React.createClass({
   _KeyDefinitions: [
-    { label: '設定なし', value: '' },
+    { label: '설정 없음', value: '' },
     { label: 'space', value: 'space' },
     { label: 'left' , value: 'left' },
     { label: 'up'   , value: 'up' },
