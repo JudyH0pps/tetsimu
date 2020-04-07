@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-<html lang="ja">
+<html lang="ko">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Tetsimu - テトリスシミュレータ</title>
+<title>Tetsimu - 테트리스 시뮬레이터</title>
 <meta charset="utf-8">
 
-<meta name="description" content="テトリスの練習ができます。フィールド・ネクストの編集や、テト譜も出力できるので積みの考察などにどうぞ。">
+<meta name="description" content="브라우저 상에서 테트리스 연습이 가능합니다. 필드・넥스트의 편집, 테트리스 기보도 출력가능하므로 쌓는 방법의 연구 등에 사용하세요.">
 <meta name="author" content="cuboktahedron">
 
 <link rel="stylesheet" href="css/lib/html5-doctor-reset-stylesheet.min.css">
@@ -35,7 +35,7 @@
   <script>
     $(function() {
       if (window.C === undefined) {
-        $('#react-content').html('IE8以下は動作対象外です。');
+        $('#react-content').html('IE8이하에서는 동작하지 않습니다');
       } else {
         React.render(React.createElement(MainPanel, null), document.body);
       }
